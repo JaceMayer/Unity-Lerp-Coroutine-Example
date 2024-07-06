@@ -12,6 +12,10 @@ jobs:
 
     runs-on: ubuntu-22.04
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # Fetch all history for all branches and tags
       - name: Build project
         uses: game-ci/unity-builder@v4
         env:
